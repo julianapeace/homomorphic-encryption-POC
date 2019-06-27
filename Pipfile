@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 djzen = "*"
+oauth2client = "*"
+pyopenssl = "*"
+gspread = "*"
 
 [requires]
 python_version = "3.7"
