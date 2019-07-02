@@ -15,19 +15,19 @@ def checkFileExistByOSPath(file_path):
     if(os.path.exists(file_path)):
         ret = True
         print(file_path + " exist.")
-        # If this is a file.
-        if(os.path.isfile(file_path)):
-            print(" and it is a file.")
-        # This is a directory.    
-        else:
-            print(" and it is a directory.")
+        # # If this is a file.
+        # if(os.path.isfile(file_path)):
+        #     print(" and it is a file.")
+        # # This is a directory.
+        # else:
+        #     print(" and it is a directory.")
     else:
         ret = False
         print(file_path + " do not exist.")
-        
+
     return ret
 
-# Check file/folder existence by exception.         
+# Check file/folder existence by exception.
 def checkFileExistByException(file_path):
     ret = True
     try:
@@ -41,34 +41,34 @@ def checkFileExistByException(file_path):
         print(file_path + " do not exist.")
     except IOError:
         ret = False
-        print(file_path + " can not be read. ")    
+        print(file_path + " can not be read. ")
     except PermissionError:
         ret = False
         print("Do not have permission to read file " + file_path)
 
     return ret
 
-# Check file/folder existence by pathlib.         
+# Check file/folder existence by pathlib.
 def checkFileExistByPathlib(file_path):
     ret = True
-        
+
     # Create path lib object.
     pl = pathlib.Path(file_path)
-    
+
     # Check whether the path lib exist or not.
     ret = pl.exists()
-    
+
     if(ret):
         print(file_path + " exist.")
     else:
         print(file_path + " do not exist.")
-    
+
     if(pl.is_file()):
         print(file_path + " is a file.")
-       
+
     if(pl.is_dir()):
         print(file_path + " is a directory.")
-    
+
     return ret
 
 # Check file/folder status by os.access method.
@@ -78,13 +78,13 @@ def checkFileStatusByOSAccess(file_path):
         print(file_path + " exist.")
     else:
         print(file_path + " do not exist.")
-            
+
     if(os.access(file_path, os.R_OK)):
         print(file_path + " is readable.")
-        
+
     if(os.access(file_path, os.W_OK)):
-        print(file_path + " is writable.")    
-        
+        print(file_path + " is writable.")
+
     if(os.access(file_path, os.EX_OK)):
         print(file_path + " is executable.")
 
@@ -93,7 +93,7 @@ def createNewFile(file_path):
     file_object = open(file_path, 'w')
     file_object.write('File is created.')
     print(file_path + " has been created. ")
-    
+
 # Create a new directory.
 def createNewFolder(file_path):
     if(not checkFileExistByOSPath(file_path)):
@@ -103,12 +103,12 @@ def createNewFolder(file_path):
 # Change the file permission to read and execute only.
 def setFilePermission(file_path):
     os.chmod(file_path, stat.S_IEXEC | stat.S_IREAD)
-     
-        
+
+
 if __name__ == '__main__':
     file_folder = "./test"
     createNewFolder(file_folder)
-    
+
     file_path = file_folder + "/abc.txt"
     # Check file existence.
     # fileExist = checkFileExistByException(file_path)

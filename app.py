@@ -32,6 +32,7 @@ def cli(filename):
             priv = pickle.load(f)
         with open("keys/pub.pkl", "rb") as f:
             pub = pickle.load(f)
+        print(f'Using pre-existing keys at {priv_path} and {pub_path}')
     else:
         print(f'Generating fresh private and public keypairs...')
         createNewFolder('keys')
