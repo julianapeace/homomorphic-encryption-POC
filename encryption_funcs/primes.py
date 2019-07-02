@@ -1,6 +1,8 @@
 import random
 import sys
 
+__author__ = "https://github.com/mikeivanov/paillier"
+
 
 def ipow(a, b, n):
     """calculates (a**b) % n via binary exponentiation, yielding itermediate
@@ -52,7 +54,6 @@ def generate_prime(bits, k=None):
     """Will generate an integer of b bits that is probably prime 
        (after k trials). Reasonably fast on current hardware for 
        values of up to around 512 bits."""    
-    assert bits >= 8
 
     if k is None:
         k = default_k(bits)

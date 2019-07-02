@@ -7,3 +7,4 @@ static-compiled
 # End djzen
 
 venv
+keys/*

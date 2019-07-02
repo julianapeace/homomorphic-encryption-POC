@@ -10,6 +10,7 @@ djzen = "*"
 oauth2client = "*"
 pyopenssl = "*"
 gspread = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.7"

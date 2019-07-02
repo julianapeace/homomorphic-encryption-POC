@@ -1,6 +1,8 @@
 import math
 from encryption_funcs import primes
 
+__author__ = "https://github.com/mikeivanov/paillier"
+
 
 def invmod(a, p, maxiter=1000000):
     """The multiplicitive inverse of a in the integers modulo p:
