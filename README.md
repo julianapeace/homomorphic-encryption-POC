@@ -9,3 +9,6 @@ This is a personal project.
   <br/>
   In loving memory of the anole
 </p>
+
+
+Special shoutout to https://github.com/mikeivanov/paillier
