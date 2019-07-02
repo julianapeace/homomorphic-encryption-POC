@@ -5,3 +5,5 @@ homomorphic-encryption-poc-gcreds.json
 db.sqlite3
 static-compiled
 # End djzen
+
+venv
