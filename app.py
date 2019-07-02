@@ -26,7 +26,7 @@ def cli(filename):
     gc = gspread.authorize(credentials)
 
     worksheet = gc.open("Homomorphic-encryption-poc-test-sheet").sheet1
-  
+
     if checkFileExistByPathlib(priv_path) & checkFileExistByPathlib(pub_path):
         with open("keys/priv.pkl", "rb") as f:
             priv = pickle.load(f)
@@ -44,14 +44,14 @@ def cli(filename):
 
         print(f'Created new keypairs in {priv_path} and {pub_path}.')
 
-    # content = open(filename, 'r').read()  
+    # content = open(filename, 'r').read()
     # TODO: count how many rows. save as row_in_sheet
 
     with open(filename) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
         num = line_count + 1
-        
+
         representation_dict = {
             "Input1": [],
             "Input2": [],
@@ -60,7 +60,7 @@ def cli(filename):
             "Enc(Input2)": [],
             "HE Sum(Pailler)": []
         }
-        
+
         for row in csv_reader:
             if line_count == 0:
                 worksheet.update_acell(f'A{num}', row[0])
@@ -74,11 +74,11 @@ def cli(filename):
                 worksheet.update_acell(f'A{num}', cx)
                 worksheet.update_acell(f'B{num}', cy)
                 worksheet.update_acell(f'C{num}', f'=(A{num}*B{num})')
-                
+
                 """ Unencrypting response """
                 cz = int(worksheet.acell(f'C{num}').value) % pub.n_sq
                 z = decrypt(priv, pub, cz)
-                
+
                 representation_dict['Input1'].append(row[0])
                 representation_dict['Input2'].append(row[1])
                 representation_dict['(Input1 + Input2)'].append(int(row[0]) + int(row[1]))
@@ -86,7 +86,6 @@ def cli(filename):
                 representation_dict['Enc(Input2)'].append(cy)
                 representation_dict['HE Sum(Pailler)'].append(cz)
                 # print(f'{row[0]} + {row[1]} = {int(row[0]) + int(row[1])}  |  {cx} * {cy} % {pub.n_sq} = {cz}')
-                worksheet.update_acell(f'D{num}', z)
 
                 line_count += 1
                 num += 1
@@ -101,7 +100,7 @@ def cli(filename):
                                     #     "HE Sum (Pailler)"]
                                     )
         print(repr(df))
-        print(f'Processed {line_count} lines.')
+        print(f'Processed {line_count - 1} lines.')
     return
     # pdb.set_trace() // debugger
 
