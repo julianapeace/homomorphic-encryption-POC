@@ -34,6 +34,7 @@ def cli(filename):
             pub = pickle.load(f)
     else:
         print(f'Generating fresh private and public keypairs...')
+        createNewFolder('keys')
         priv, pub = generate_keypair(7)  # we have to use n_bits<=7 for gsheets to handle the "computation" of multiplying big numbers
 
         with open(priv_path, "wb") as f:
