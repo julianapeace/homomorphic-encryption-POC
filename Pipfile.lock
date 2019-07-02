@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "aedceb8170fda8746dc467365efea18bc90e7c808eebfadb1a362c3e5a49ac20"
+            "sha256": "4c8afc29de9648bf563a3c5e4a77e502e5a59f51fbccd53c34de684c06a93f5a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -75,6 +75,7 @@
                 "sha256:2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13",
                 "sha256:5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"
             ],
+            "index": "pypi",
             "version": "==7.0"
         },
         "cryptography": {
@@ -97,20 +98,6 @@
                 "sha256:f57b76e46a58b63d1c6375017f4564a28f19a5ca912691fd2e4261b3414b618d"
             ],
             "version": "==2.7"
-        },
-        "django": {
-            "hashes": [
-                "sha256:4d23f61b26892bac785f07401bc38cbf8fa4cec993f400e9cd9ddf28fd51c0ea",
-                "sha256:6e974d4b57e3b29e4882b244d40171d6a75202ab8d2402b8e8adbd182e25cf0c"
-            ],
-            "version": "==2.2.3"
-        },
-        "djzen": {
-            "hashes": [
-                "sha256:14c90ceafad1fa24c62ba20c8e6b2b592c847b8fe2ac5b7885fa2ad2f3763752"
-            ],
-            "index": "pypi",
-            "version": "==17.12.5"
         },
         "gspread": {
             "hashes": [
@@ -259,26 +246,12 @@
             ],
             "version": "==1.12.0"
         },
-        "sqlparse": {
-            "hashes": [
-                "sha256:40afe6b8d4b1117e7dff5504d7a8ce07d9a1b15aeeade8a2d10f130a834f8177",
-                "sha256:7c3dca29c022744e95b547e867cee89f4fce4373f3549ccd8797d8eb52cdb873"
-            ],
-            "version": "==0.3.0"
-        },
         "urllib3": {
             "hashes": [
                 "sha256:b246607a25ac80bedac05c6f282e3cdaf3afb65420fd024ac94435cabe6e18d1",
                 "sha256:dbe59173209418ae49d485b87d1681aefa36252ee85884c31346debd19463232"
             ],
             "version": "==1.25.3"
-        },
-        "whitenoise": {
-            "hashes": [
-                "sha256:118ab3e5f815d380171b100b05b76de2a07612f422368a201a9ffdeefb2251c1",
-                "sha256:42133ddd5229eeb6a0c9899496bdbe56c292394bf8666da77deeb27454c0456a"
-            ],
-            "version": "==4.1.2"
         }
     },
     "develop": {}

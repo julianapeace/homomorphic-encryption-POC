@@ -6,11 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-djzen = "*"
 oauth2client = "*"
 pyopenssl = "*"
 gspread = "*"
 pandas = "*"
+click = "*"
 
 [requires]
 python_version = "3.7"
